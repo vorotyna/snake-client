@@ -19,6 +19,7 @@ let moveUp = 'w';
 let moveDown = 's';
 let moveLeft = 'a';
 let moveRight = 'd';
+let message = "p";
 
 const handleUserInput = function(data) {
   if (data === '\u0003') { // ==> The control + C key to exit
@@ -39,6 +40,10 @@ const handleUserInput = function(data) {
 
   if (data === moveRight) {
     connection.write('Move: right');
+  }
+
+  if (data === message) {
+    connection.write('Say: See ya');
   }
 
 };
