@@ -1,5 +1,9 @@
+// Stores the active TCP connection object.
+let connection;
+
 // setup interface to handle user input from stdin
-const setupInput = function() {
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -22,19 +26,19 @@ const handleUserInput = function(data) {
   }
 
   if (data === moveUp) {
-    console.log('Move: up');
+    connection.write('Move: up');
   }
 
   if (data === moveDown) {
-    console.log('Move: down');
+    connection.write('Move: down');
   }
 
   if (data === moveLeft) {
-    console.log('Move: left');
+    connection.write('Move: left');
   }
 
   if (data === moveRight) {
-    console.log('Move: right');
+    connection.write('Move: right');
   }
 
 };
