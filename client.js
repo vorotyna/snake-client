@@ -7,16 +7,18 @@ const connect = function() {
     port: 50541 // PORT number here,
   });
 
+  // interpret incoming data as text
+  conn.setEncoding("utf8");
+
   // Setting name of snake
+  // Move snake up one block
   // Print message to the sceen when the connection is successfully established
   conn.on('connect', () => {
     conn.write('Name: AV');
+    // conn.write('Move: up');
     console.log('Successfully connected to game server');
   });
 
-
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
 
   // End connection after 5 seconds of idle time
   conn.setTimeout(5000);
