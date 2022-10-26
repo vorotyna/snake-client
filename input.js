@@ -15,11 +15,7 @@ const setupInput = (conn) => {
 };
 
 // handling user key input
-let moveUp = 'w';
-let moveDown = 's';
-let moveLeft = 'a';
-let moveRight = 'd';
-let message = "p";
+const { moveUp, moveDown, moveLeft, moveRight, message } = require('./constants');
 
 const handleUserInput = function(data) {
   if (data === '\u0003') { // ==> The control + C key to exit
